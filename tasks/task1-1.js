@@ -3,11 +3,9 @@ function summ() {
   // TODO: implement function
   // HINT: pseudo-array `arguments` should be used (https://learn.javascript.ru/arguments-pseudoarray)
   let sum=0;
-  for (let i = 0; i < arguments.length; i++) {
-    console.log (typeof +arguments[i])   
-     if (+arguments[i]){
-     sum+= +arguments[i];
-     console.log (sum)      
+  for (let i = 0; i < arguments.length; i++) {       
+     if (+arguments[i]) {
+     sum += +arguments[i];          
   }  
 }
   return sum;
