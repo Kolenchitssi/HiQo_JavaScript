@@ -66,12 +66,18 @@ callWithFunctionResult(doubleValue, getFour);
 // => doubleValue was called with value returned by getFour, => 2 * 4 = 8
 
 function callWhileStringIsNotEmpty(string, func) {
+  if (!string) {
+    return false;
+  }
   let str = string;
-  if (str.length > 0) {
+  if (typeof str === 'string' && str.length > 1) {
     func(str);
     str = str.slice(0, -1);
     callWhileStringIsNotEmpty(str, func);
+  } else if (str.length === 1) {
+    return func(str);
   }
+  return true;
 }
 
 // Expected result
