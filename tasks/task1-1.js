@@ -9,4 +9,4 @@ function summ(...args) {
   return sum;
 }
 
-summ(1, '2', "3", 6, 'abc');
+summ(1, '2', '3', 5, 'abc');
