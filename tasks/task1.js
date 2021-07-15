@@ -38,7 +38,7 @@ function getTenString() {
 summAdvanced('abc', 1, '2', getTen, getTenString, getRandomNumber);
 
 function isValueExists(value) {
-  if (value === 'undefined' || value === null) {
+  if (value === undefined || value === null) {
     return false;
   }
   return true;

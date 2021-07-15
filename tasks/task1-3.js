@@ -5,5 +5,5 @@ function isValueExists(value) {
   return true;
 }
 
-isValueExists(undefined);
-console.log(isValueExists(undefined));
+isValueExists(null);
+console.log(isValueExists(0));
