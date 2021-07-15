@@ -1,5 +1,5 @@
 function callWhileStringIsNotEmpty(string, func) {
-    let str=string;
+  let str = string;
   if (str.length > 0) {
     func(str);
     str = str.slice(0, -1);
