@@ -1,0 +1,35 @@
+{
+  "name": "hiqo_javascript",
+  "version": "1.0.0",
+  "description": "tasks javaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine --config=jasmine.json",
+    "prepare": "husky install",
+    "prettier": "prettier --write tasks",
+    "lint": "eslint tasks/",
+    "lint:fix": "eslint --fix tasks/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kolenchitssi/HiQo_JavaScript.git"
+  },
+  "keywords": [
+    "javaScript",
+    "HiQo"
+  ],
+  "author": "KolenchitsSI",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kolenchitssi/HiQo_JavaScript/issues"
+  },
+  "homepage": "https://github.com/Kolenchitssi/HiQo_JavaScript#readme",
+  "devDependencies": {
+    "eslint": "^7.30.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "husky": "^7.0.1",
+    "jasmine": "^3.8.0",
+    "prettier": "2.3.2"
+  }
+}
