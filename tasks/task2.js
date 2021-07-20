@@ -49,8 +49,30 @@ function findIndex(arr, item) {
   return index;
 }
 
+/* Task 4 */
+function flattenDeep(arr) {
+  let newArr = arr;
+  let hasSubarr = false;
+  if (Array.isArray(newArr) === true) {
+    newArr.forEach((item) => {
+      if (Array.isArray(item) === true) {
+        hasSubarr = true;
+      }
+    });
+    if (hasSubarr) {
+      newArr = newArr.flat();
+      return flattenDeep(newArr);
+    } else {
+      return newArr;
+    }
+  } else {
+    return [];
+  }
+}
+
 module.exports = {
   chunk,
   difference,
   findIndex,
+  flattenDeep,
 };
