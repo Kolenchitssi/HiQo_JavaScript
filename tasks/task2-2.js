@@ -5,12 +5,12 @@ function difference(arr1, arr2) {
   }
   if (arr1.length > 0 && arr2.length > 0) {
     const newArr = [];
-    arr1.forEach(element => {
+    arr1.forEach((element) => {
       if (arr2.indexOf(element) === -1) {
         newArr.push(element);
       }
     });
-    arr2.forEach(element => {
+    arr2.forEach((element) => {
       if (arr1.indexOf(element) === -1) {
         newArr.push(element);
       }
@@ -21,4 +21,4 @@ function difference(arr1, arr2) {
 }
 // Expected result
 difference([2, 1], [2, 3, 4]); // => [1, 3, 4]
-console.log(difference([2, 1], [2, 3, 4]));
+// console.log(difference([2, 1], [2, 3, 4]));
