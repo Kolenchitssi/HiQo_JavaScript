@@ -1,19 +1,3 @@
-// Task 1
-function chunk(arr, lengSubarrays) {
-  if (Array.isArray(arr) === true && arr.length > 0 && lengSubarrays > 0) {
-    const newArr = [];
-    for (let i = 0; i < arr.length; i += lengSubarrays) {
-      if ((i + lengSubarrays) < arr.length) {
-        newArr.push(arr.slice(i, i + lengSubarrays));
-      } else {
-        newArr.push(arr.slice(i));
-      }
-    }
-    return newArr;
-  }
-  return [];
-}
-
 function difference(arr1, arr2) {
   if (Array.isArray(arr1) === false && Array.isArray(arr2) === false) {
     return 'invalid data array';
@@ -34,8 +18,6 @@ function difference(arr1, arr2) {
   }
   return [];
 }
-
-module.exports = {
-  chunk,
-  difference,
-};
+// Expected result
+difference([2, 1], [2, 3, 4]); // => [1, 3, 4]
+console.log(difference([2, 1], [2, 3, 4]));
