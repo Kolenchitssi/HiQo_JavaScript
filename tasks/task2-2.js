@@ -1,3 +1,4 @@
+/* Task 2 */
 function difference(arr1, arr2) {
   if (Array.isArray(arr1) === false && Array.isArray(arr2) === false) {
     return 'invalid data array';
