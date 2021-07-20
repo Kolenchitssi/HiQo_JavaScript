@@ -1,7 +1,7 @@
 /* Task 2 */
 function difference(arr1, arr2) {
-  if (Array.isArray(arr1) === false && Array.isArray(arr2) === false) {
-    return 'invalid data array';
+  if (Array.isArray(arr1) === false || Array.isArray(arr2) === false) {
+    return [];
   }
   if (arr1.length > 0 && arr2.length > 0) {
     const newArr = [];
