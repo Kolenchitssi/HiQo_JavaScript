@@ -11,12 +11,10 @@ function flattenDeep(arr) {
     if (hasSubarr) {
       newArr = newArr.flat();
       return flattenDeep(newArr);
-    } else {
-      return newArr;
     }
-  } else {
-    return [];
+    return newArr;
   }
+  return [];
 }
 
 // Expected result
