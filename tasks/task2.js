@@ -86,10 +86,21 @@ function fromPairs(arr) {
   return result;
 }
 
+/* Task 6 */
+function uniq(arr) {
+  if (Array.isArray(arr) === false) {
+    return [];
+  }
+  let mySet = new Set(arr);
+  mySet = Array.from(mySet);
+  return mySet;
+}
+
 module.exports = {
   chunk,
   difference,
   findIndex,
   flattenDeep,
   fromPairs,
+  uniq,
 };
