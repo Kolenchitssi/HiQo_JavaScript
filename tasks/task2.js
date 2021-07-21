@@ -112,6 +112,39 @@ function find(arr, func) {
   return arr.find(func);
 }
 
+/* Task 9 */
+function groupBy(arr, funcKey) {
+  if (!arr || !funcKey || arr.length === 0 || typeof funcKey !== 'function') {
+    return {};
+  }
+  return arr.reduce((res, item) => {
+    if (res[funcKey(item)]) {
+      res[funcKey(item)].push(item);
+    } else {
+      res[funcKey(item)] = [item];
+    }
+    return res;
+  }, {});
+}
+
+/* Task 10 */
+function isEqual(object1, object2) {
+  if (!object1 || !object2) return false;
+  const propertyObj1 = Object.getOwnPropertyNames(object1);
+  const propertyObj2 = Object.getOwnPropertyNames(object2);
+  if (propertyObj1.length !== propertyObj2.length) return false;
+  for (let i = 0; i < propertyObj1.length; i += 1) {
+    const item = propertyObj1[i];
+    if (typeof object1[item] === 'object' && object1[item] !== null) {
+      const result = isEqual(object1[item], object2[item]);
+      if (!result) return false;
+    } else if (object1[item] !== object2[item]) {
+      return false;
+    }
+  }
+  return true;
+}
+
 module.exports = {
   chunk,
   difference,
@@ -121,4 +154,6 @@ module.exports = {
   uniq,
   every,
   find,
+  groupBy,
+  isEqual,
 };
