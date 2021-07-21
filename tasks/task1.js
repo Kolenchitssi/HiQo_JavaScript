@@ -1,8 +1,8 @@
 function summ(...args) {
   if (args.length === 0) return null;
   let sum = 0;
-  args.forEach(item => {
-    sum += (+item && typeof item !== 'boolean') ? +item : 0;
+  args.forEach((item) => {
+    sum += +item && typeof item !== 'boolean' ? +item : 0;
   });
   return sum;
 }
