@@ -1,11 +1,9 @@
 function summ(...args) {
   if (args.length === 0) return null;
   let sum = 0;
-  for (let i = 0; i < args.length; i += 1) {
-    if (+args[i] && typeof args[i] !== 'boolean') {
-      sum += +args[i];
-    }
-  }
+  args.forEach(item => {
+    sum += (+item && typeof item !== 'boolean') ? +item : 0;
+  });
   return sum;
 }
 
@@ -14,13 +12,13 @@ summ(1, '2', '3', 5, 'abc');
 function summAdvanced(...args) {
   if (args.length === 0) return null;
   let sum = 0;
-  for (let i = 0; i < args.length; i += 1) {
-    if (typeof args[i] === 'function' && +args[i]()) {
-      sum += +args[i]();
-    } else if (+args[i] && typeof args[i] !== 'boolean') {
-      sum += +args[i];
+  args.forEach((item) => {
+    if (typeof item === 'function' && +item()) {
+      sum += +item();
+    } else if (+item && typeof item !== 'boolean') {
+      sum += +item;
     }
-  }
+  });
   return sum;
 }
 
