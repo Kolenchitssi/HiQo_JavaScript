@@ -96,6 +96,14 @@ function uniq(arr) {
   return mySet;
 }
 
+/* Task 7 */
+function every(arr, func) {
+  if (!arr || !func || arr.length === 0 || typeof func !== 'function') {
+    return false;
+  }
+  return arr.every(func);
+}
+
 module.exports = {
   chunk,
   difference,
@@ -103,4 +111,5 @@ module.exports = {
   flattenDeep,
   fromPairs,
   uniq,
+  every,
 };
