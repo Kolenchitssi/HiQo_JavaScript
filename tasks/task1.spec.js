@@ -12,11 +12,12 @@ describe('Task 1.', () => {
       expect(result).toEqual(expectedResult);
     });
     it('should calculate sum only for number values and ignore functions', () => {
-      const result = task1.summ(1, '2', '3', 5, () => {});
+      const result = task1.summ(1, '2', '3', 5, () => { });
       const expectedResult = 11;
       expect(result).toEqual(expectedResult);
     });
   });
+
   describe('2 summAdvanced', () => {
     it('should calculate advanced sum only for number values', () => {
       const randomNumber = Math.random();
@@ -38,7 +39,7 @@ describe('Task 1.', () => {
       const randomNumber = Math.random();
       const getRandomNumber = () => randomNumber;
       const getString = () => 'abc';
-      const getFunction = () => () => {};
+      const getFunction = () => () => { };
       const result = task1.summAdvanced(
         'abc',
         1,
@@ -56,6 +57,7 @@ describe('Task 1.', () => {
       expect(result).toEqual(expectedResult);
     });
   });
+
   describe('3 isValueExists', () => {
     it('should return true for a number', () => {
       const result = task1.isValueExists(1);
@@ -86,6 +88,7 @@ describe('Task 1.', () => {
       expect(result).toBe(false);
     });
   });
+
   describe('4 callWithFunctionResult', () => {
     const doubleValue = (value) => value * 2;
     const getFour = () => 4;
@@ -95,6 +98,7 @@ describe('Task 1.', () => {
       expect(result).toEqual(expectedResult);
     });
   });
+
   describe('5 callWhileStringIsNotEmpty', () => {
     let consolelogSpy;
     beforeEach(() => {
