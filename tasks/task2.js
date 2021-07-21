@@ -104,6 +104,14 @@ function every(arr, func) {
   return arr.every(func);
 }
 
+/* Task 8 */
+function find(arr, func) {
+  if (!arr || !func || arr.length === 0 || typeof func !== 'function') {
+    return null;
+  }
+  return arr.find(func);
+}
+
 module.exports = {
   chunk,
   difference,
@@ -112,4 +120,5 @@ module.exports = {
   fromPairs,
   uniq,
   every,
+  find,
 };
