@@ -1,4 +1,5 @@
 function summ(...args) {
+  if (args.length === 0) return null;
   let sum = 0;
   for (let i = 0; i < args.length; i += 1) {
     if (+args[i] && typeof args[i] !== 'boolean') {
@@ -11,6 +12,7 @@ function summ(...args) {
 summ(1, '2', '3', 5, 'abc');
 
 function summAdvanced(...args) {
+  if (args.length === 0) return null;
   let sum = 0;
   for (let i = 0; i < args.length; i += 1) {
     if (typeof args[i] === 'function' && +args[i]()) {
