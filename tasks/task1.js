@@ -1,4 +1,3 @@
-// Task 1
 function summ(...args) {
   let sum = 0;
   for (let i = 0; i < args.length; i += 1) {
@@ -46,9 +45,7 @@ function isValueExists(value) {
 
 isValueExists(null);
 
-// Task 4
 function callWithFunctionResult(funct1, funct2) {
-  // TODO: implement function
   const result1 = funct2();
   return funct1(result1);
 }
@@ -61,9 +58,7 @@ function getFour() {
   return 4;
 }
 
-// Expected result
 callWithFunctionResult(doubleValue, getFour);
-// => doubleValue was called with value returned by getFour, => 2 * 4 = 8
 
 function callWhileStringIsNotEmpty(string, func) {
   if (!string) {
@@ -80,7 +75,6 @@ function callWhileStringIsNotEmpty(string, func) {
   return true;
 }
 
-// Expected result
 function consoleLog(value) {
   console.log(value);
 }
