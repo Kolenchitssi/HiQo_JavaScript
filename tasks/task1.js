@@ -48,6 +48,7 @@ function isValueExists(value) {
 isValueExists(null);
 
 function callWithFunctionResult(funct1, funct2) {
+  if (!funct1 || !funct2) return false;
   const result1 = funct2();
   return funct1(result1);
 }
