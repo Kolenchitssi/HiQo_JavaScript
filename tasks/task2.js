@@ -58,19 +58,13 @@ function flattenDeep(arr) {
 
 /* Task 5 */
 function fromPairs(arr) {
+  const result = {};
   if (Array.isArray(arr) === false || arr.length === 0) return {};
   arr.forEach((item) => {
-    if (Array.isArray(item) === false || item.length !== 2) {
-      return {};
+    if (Array.isArray(item) === true || item.length === 2) {
+      result[item[0]] = item[1];
     }
-    return true;
   });
-  const result = {};
-  let item;
-  for (let i = 0; i < arr.length; i += 1) {
-    item = arr[i];
-    result[item[0]] = item[1];
-  }
   return result;
 }
 
