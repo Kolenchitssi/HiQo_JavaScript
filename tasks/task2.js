@@ -90,10 +90,12 @@ function every(arr, func) {
 
 /* Task 8 */
 function find(arr, func) {
-  if (!arr || !func || arr.length === 0 || typeof func !== 'function') {
-    return null;
-  }
-  return arr.find(func);
+  let itemTrue = null;
+  arr.forEach((item) => {
+    const result = func(item);
+    if (result === true && !itemTrue) itemTrue = item;
+  });
+  return itemTrue;
 }
 
 /* Task 9 */
