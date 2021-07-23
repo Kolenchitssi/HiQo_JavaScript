@@ -82,10 +82,13 @@ function uniq(arr) {
 
 /* Task 7 */
 function every(arr, func) {
-  if (!arr || !func || arr.length === 0 || typeof func !== 'function') {
-    return false;
-  }
-  return arr.every(func);
+  if (!arr || !func || arr.length === 0 || typeof func !== 'function') return false;
+  let itemTrue = true;
+  arr.forEach((item) => {
+    const result = func(item);
+    if (result === false) itemTrue = false;
+  });
+  return itemTrue;
 }
 
 /* Task 8 */
