@@ -114,9 +114,12 @@ function groupBy(arr, funcKey) {
 /* Task 10 */
 function isEqual(object1, object2) {
   if (!object1 || !object2) return false;
+
   const propertyObj1 = Object.getOwnPropertyNames(object1);
   const propertyObj2 = Object.getOwnPropertyNames(object2);
+
   if (propertyObj1.length !== propertyObj2.length) return false;
+
   for (let i = 0; i < propertyObj1.length; i += 1) {
     const item = propertyObj1[i];
     if (typeof object1[item] === 'object' && object1[item] !== null) {
@@ -126,6 +129,7 @@ function isEqual(object1, object2) {
       return false;
     }
   }
+
   return true;
 }
 
