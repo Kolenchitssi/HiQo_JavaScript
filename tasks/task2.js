@@ -17,12 +17,12 @@ function difference(arr1, arr2) {
   if (arr1.length > 0 && arr2.length > 0) {
     const newArr = [];
     arr1.forEach((element) => {
-      if (arr2.indexOf(element) === -1) {
+      if (arr2.includes(element) === false) {
         newArr.push(element);
       }
     });
     arr2.forEach((element) => {
-      if (arr1.indexOf(element) === -1) {
+      if (arr1.includes(element) === false) {
         newArr.push(element);
       }
     });
