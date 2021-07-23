@@ -33,7 +33,7 @@ function difference(arr1, arr2) {
 
 /* Task 3 */
 function findIndex(arr, item) {
-  if (!arr) return [];
+  if (!arr) return false;
   let index;
 
   if (typeof item === 'function') {
