@@ -1,7 +1,7 @@
 // Task 1
 function chunk(arr, lengSubarrays) {
+  const newArr = [];
   if (Array.isArray(arr) === true && arr.length > 0 && lengSubarrays > 0) {
-    const newArr = [];
     for (let i = 0; i < arr.length; i += lengSubarrays) {
       if (i + lengSubarrays < arr.length) {
         newArr.push(arr.slice(i, i + lengSubarrays));
@@ -9,9 +9,8 @@ function chunk(arr, lengSubarrays) {
         newArr.push(arr.slice(i));
       }
     }
-    return newArr;
   }
-  return [];
+  return newArr;
 }
 
 /* Task 2 */
