@@ -34,14 +34,7 @@ function difference(arr1, arr2) {
 /* Task 3 */
 function findIndex(arr, item) {
   if (!arr) return false;
-  let index;
-
-  if (typeof item === 'function') {
-    index = arr.findIndex(item);
-  } else {
-    index = arr.indexOf(item);
-  }
-  return index;
+  return (typeof item === 'function') ? arr.findIndex(item) : arr.indexOf(item);
 }
 
 /* Task 4 */
