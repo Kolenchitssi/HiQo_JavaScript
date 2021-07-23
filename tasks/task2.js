@@ -34,7 +34,7 @@ function difference(arr1, arr2) {
 /* Task 3 */
 function findIndex(arr, item) {
   if (!arr) return false;
-  return (typeof item === 'function') ? arr.findIndex(item) : arr.indexOf(item);
+  return typeof item === 'function' ? arr.findIndex(item) : arr.indexOf(item);
 }
 
 /* Task 4 */
@@ -76,12 +76,8 @@ function fromPairs(arr) {
 
 /* Task 6 */
 function uniq(arr) {
-  if (Array.isArray(arr) === false) {
-    return [];
-  }
-  let mySet = new Set(arr);
-  mySet = Array.from(mySet);
-  return mySet;
+  if (Array.isArray(arr) === false) return [];
+  return Array.from(new Set(arr));
 }
 
 /* Task 7 */
