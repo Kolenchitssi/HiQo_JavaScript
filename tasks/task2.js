@@ -17,8 +17,8 @@ function difference(arr1, arr2) {
   }
 
   if (arr1.length > 0 && arr2.length > 0) {
-    const res1 = arr1.filter((item) => { return arr2.indexOf(item) });
-    const res2 = arr2.filter((item) => { return arr1.indexOf(item) });
+    const res1 = arr1.filter((item) => !arr2.includes(item));
+    const res2 = arr2.filter((item) => !arr1.includes(item));
     newArr = [...res1, ...res2];
   }
 
