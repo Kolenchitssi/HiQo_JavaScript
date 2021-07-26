@@ -11,24 +11,18 @@ function chunk(arr, lengSubarrays) {
 
 /* Task 2 */
 function difference(arr1, arr2) {
+  let newArr = [];
   if (Array.isArray(arr1) === false || Array.isArray(arr2) === false) {
     return [];
   }
+
   if (arr1.length > 0 && arr2.length > 0) {
-    const newArr = [];
-    arr1.forEach((element) => {
-      if (arr2.includes(element) === false) {
-        newArr.push(element);
-      }
-    });
-    arr2.forEach((element) => {
-      if (arr1.includes(element) === false) {
-        newArr.push(element);
-      }
-    });
-    return newArr;
+    const res1 = arr1.filter((item) => { return arr2.indexOf(item) });
+    const res2 = arr2.filter((item) => { return arr1.indexOf(item) });
+    newArr = [...res1, ...res2];
   }
-  return [];
+
+  return newArr;
 }
 
 /* Task 3 */
