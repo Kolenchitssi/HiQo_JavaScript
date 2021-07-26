@@ -17,8 +17,8 @@ function difference(arr1, arr2) {
   }
 
   if (arr1.length > 0 && arr2.length > 0) {
-    const res1 = arr1.filter((item) => !arr2.includes(item));
-    const res2 = arr2.filter((item) => !arr1.includes(item));
+    const res1 = arr1.filter(item => !arr2.includes(item));
+    const res2 = arr2.filter(item => !arr1.includes(item));
     newArr = [...res1, ...res2];
   }
 
@@ -45,7 +45,7 @@ function flattenDeep(arr) {
 function fromPairs(arr) {
   const result = {};
   if (Array.isArray(arr) === false || arr.length === 0) return {};
-  arr.forEach((item) => {
+  arr.forEach(item => {
     if (Array.isArray(item) === true || item.length === 2) {
       result[item[0]] = item[1];
     }
@@ -61,9 +61,10 @@ function uniq(arr) {
 
 /* Task 7 */
 function every(arr, func) {
-  if (!arr || !func || arr.length === 0 || typeof func !== 'function') return false;
+  if (!arr || !func || arr.length === 0 || typeof func !== 'function')
+    return false;
   let itemTrue = true;
-  arr.forEach((item) => {
+  arr.forEach(item => {
     const result = func(item);
     if (result === false) itemTrue = false;
   });
@@ -73,7 +74,7 @@ function every(arr, func) {
 /* Task 8 */
 function find(arr, func) {
   let itemTrue = null;
-  arr.forEach((item) => {
+  arr.forEach(item => {
     const result = func(item);
     if (result === true && !itemTrue) itemTrue = item;
   });
