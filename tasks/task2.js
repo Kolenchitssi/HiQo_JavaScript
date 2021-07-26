@@ -40,17 +40,8 @@ function findIndex(arr, item) {
 /* Task 4 */
 function flattenDeep(arr) {
   let newArr = arr;
-  let hasSubarr = false;
   if (Array.isArray(newArr) === true) {
-    newArr.forEach((item) => {
-      if (Array.isArray(item) === true) {
-        hasSubarr = true;
-      }
-    });
-    if (hasSubarr) {
-      newArr = newArr.flat();
-      return flattenDeep(newArr);
-    }
+    newArr = newArr.flat(Infinity);
     return newArr;
   }
   return [];
