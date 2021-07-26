@@ -12,5 +12,16 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-  },
-};
+    "prefer-destructuring": ["error", {
+      "VariableDeclarator": {
+        "array": false,
+        "object": false
+      },
+      "AssignmentExpression": {
+        "array": false,
+        "object": false
+      }
+    }, {
+        "enforceForRenamedProperties": false
+      }]
+  }
