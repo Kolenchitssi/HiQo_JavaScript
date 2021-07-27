@@ -43,7 +43,7 @@ function curry(fn) {
       return innerFn(n - 1, [...args, a]);
     };
   }
-  return innerFn(len, [])
+  return innerFn(len, []);
 }
 
 /* Task 5 */
@@ -71,10 +71,25 @@ function debounce(fn, timeOut) {
 //   startFunc();
 // }
 
+/* Task 6 */
+function memoize(fn) {
+  const cashResult = {};
+
+  return function (...args) {
+    const keyFunc = args.join(', ');
+    if (cashResult[keyFunc] === undefined) {
+      cashResult[keyFunc] = fn(...args);
+      return (`function summ was called, result ${cashResult[keyFunc]}`);
+    }
+    return (`function summ was NOT called, result ${cashResult[keyFunc]} was remembered for arguments ${keyFunc} and returned`);
+  };
+}
+
 module.exports = {
   rememberResult,
   callMaxTimes,
   partial,
   curry,
   debounce,
+  memoize,
 };
