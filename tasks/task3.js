@@ -79,9 +79,9 @@ function memoize(fn) {
     const keyFunc = args.join(', ');
     if (cashResult[keyFunc] === undefined) {
       cashResult[keyFunc] = fn(...args);
-      return (`function summ was called, result ${cashResult[keyFunc]}`);
+      return `function summ was called, result ${cashResult[keyFunc]}`;
     }
-    return (`function summ was NOT called, result ${cashResult[keyFunc]} was remembered for arguments ${keyFunc} and returned`);
+    return `function summ was NOT called, result ${cashResult[keyFunc]} was remembered for arguments ${keyFunc} and returned`;
   };
 }
 
