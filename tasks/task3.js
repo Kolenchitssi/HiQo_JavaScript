@@ -49,6 +49,7 @@ function curry(fn) {
 /* Task 5 */
 function debounce(fn, timeOut) {
   // HINT: setTimeout and clearTimeout should be used.
+  if (fn === undefined) return null;
   function startFunc() {
     const timerId = setTimeout(fn, timeOut);
     debounce.timeOutId = timerId;
@@ -56,12 +57,14 @@ function debounce(fn, timeOut) {
 
   clearTimeout(debounce.timeOutId);
   startFunc();
+  return true;
 }
 
 // variant 2
 // let timeOutId = 0;
 
 // function debounce(fn, timeOut) {
+// if (fn === undefined) return null;
 
 //   function startFunc() {
 //     const timerId = setTimeout(fn, timeOut);
@@ -79,9 +82,8 @@ function memoize(fn) {
     const keyFunc = args.join(', ');
     if (cashResult[keyFunc] === undefined) {
       cashResult[keyFunc] = fn(...args);
-      return `function summ was called, result ${cashResult[keyFunc]}`;
     }
-    return `function summ was NOT called, result ${cashResult[keyFunc]} was remembered for arguments ${keyFunc} and returned`;
+    return cashResult[keyFunc];
   };
 }
 
