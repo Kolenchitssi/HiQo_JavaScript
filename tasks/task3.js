@@ -27,15 +27,14 @@ function partial(func, arg) {
 /* Task 4 */
 function curry(fn) {
   const len = fn.length;
-  function innerFn(n, args) {
-    return function actualInnerFn(a) {
-      if (n <= 1) {
-        return fn(...args, a);
-      }
-      return innerFn(n - 1, [...args, a]);
+  return function addArg(...args) {
+    if (len <= args.length) {
+      return fn.apply(this, args);
+    }
+    return function (...args2) {
+      return addArg.apply(this, args.concat(args2));
     };
-  }
-  return innerFn(len, []);
+  };
 }
 
 /* Task 5 */
