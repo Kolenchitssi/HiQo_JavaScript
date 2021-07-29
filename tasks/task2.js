@@ -61,7 +61,7 @@ function uniq(arr) {
 
 /* Task 7 */
 function every(arr, func) {
-  if (!arr || !func || arr.length === 0 || typeof func !== 'function') return false;
+  if (!arr || !func || arr.length === 0 || typeof func !== 'function') { return false; }
   let itemTrue = true;
   arr.forEach((item) => {
     const result = func(item);
