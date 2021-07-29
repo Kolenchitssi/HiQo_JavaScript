@@ -11,25 +11,17 @@ function rememberResult(initialValue) {
 /* Task 2 */
 function callMaxTimes(numberOfTimes, func) {
   let maxTimes = numberOfTimes;
-  const nameFunc = func;
 
   return function () {
     if (maxTimes === 0) return 'nothing happens';
     maxTimes -= 1;
-    const result = nameFunc();
-    return result;
+    return func();
   };
 }
 
 /* Task 3 */
 function partial(func, arg) {
-  const nameFunc = func;
-  const argFunc = arg;
-
-  return function (nameInput) {
-    const result = nameFunc(argFunc, nameInput);
-    return result;
-  };
+  return (nameInput) => func(arg, nameInput);
 }
 
 /* Task 4 */
@@ -79,7 +71,7 @@ function memoize(fn) {
   const cashResult = {};
 
   return function (...args) {
-    const keyFunc = args.join(', ');
+    const keyFunc = args.join('|');
     if (cashResult[keyFunc] === undefined) {
       cashResult[keyFunc] = fn(...args);
     }
