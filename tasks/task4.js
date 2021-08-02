@@ -1,15 +1,21 @@
 /* Task 1 */
 function createObject(obj) {
-  const obj1 = obj;
-  obj1.getTestField = obj.getTestField.bind(obj);
-  return obj;
+  const resultObj = obj;
+  const objKeys = Object.keys(obj);
+
+  objKeys.forEach((key) => {
+    if (typeof obj[key] === 'function') resultObj[key] = obj[key].bind(obj);
+  });
+  return resultObj;
 }
 
 /* Task 2 */
 function Collection(constructor) {
   this.collection = [];
 
-  this.readAll = function () { return this.collection; };
+  this.readAll = function () {
+    return this.collection;
+  };
 
   this.add = function (...args) {
     const newObj = new constructor(...args);
