@@ -26,31 +26,31 @@ function Collection(constructor) {
   this.get = function (func) {
     const resultObj = {};
     const resultIndex = this.collection.findIndex(func);
-    resultObj.item = this.collection[resultIndex];
+    const resItem = this.collection[resultIndex];
 
     resultObj.update = (funcUpdateItem) => {
-      funcUpdateItem(resultObj.item);
+      funcUpdateItem(resItem);
       return resultObj;
     };
 
     resultObj.remove = () => {
       this.collection.splice(resultIndex, 1);
-      return resultObj.item;
+      return resItem;
     };
 
-    resultObj.read = () => resultObj.item;
+    resultObj.read = () => resItem;
     return resultObj;
   };
 
   this.getBy = (func) => {
     const resultObjItems = {};
-    resultObjItems.arrItems = this.collection.filter(func);
+    const arrItems = this.collection.filter(func);
 
     resultObjItems.update = (funcUpdate) => {
-      resultObjItems.arrItems.forEach((item, index) => funcUpdate(item, index));
+      arrItems.forEach((item, index) => funcUpdate(item, index));
     };
 
-    resultObjItems.read = () => resultObjItems.arrItems;
+    resultObjItems.read = () => arrItems;
 
     return resultObjItems;
   };
