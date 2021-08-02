@@ -46,10 +46,8 @@ function Collection(constructor) {
     const resultObjItems = {};
     resultObjItems.arrItems = this.collection.filter(func);
 
-    resultObjItems.update = function (funcUpdate) {
-      resultObjItems.arrItems.forEach((item, index) => {
-        funcUpdate(item, index);
-      });
+    resultObjItems.update = (funcUpdate) => {
+      resultObjItems.arrItems.forEach((item, index) => funcUpdate(item, index));
     };
 
     resultObjItems.read = () => resultObjItems.arrItems;
